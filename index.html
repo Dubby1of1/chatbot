@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e5631;
-            --primary-light: #2a7344;
-            --primary-dark: #0f3a1d;
+            --primary: #006400;
+            --primary-light: #007f00;
+            --primary-dark: #004d00;
             --accent: #ffb800;
             --accent-hover: #e6a700;
             --light: #f8f9fa;
@@ -21,10 +21,8 @@
             --container-bg: #ffffff;
             --message-user: #e9f5ff;
             --message-bot: #f0f7f0;
-            --message-bot-border: #1e5631;
+            --message-bot-border: #006400;
             --shadow: rgba(0, 0, 0, 0.08);
-            --telegram: #0088cc;
-            --twitter: #1da1f2;
         }
         
         * {
@@ -332,143 +330,6 @@
             margin-top: 10px;
         }
         
-        /* Platform integrations */
-        .platform-integrations {
-            margin-top: 40px;
-            text-align: center;
-        }
-        
-        .platform-integrations h2 {
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-        }
-        
-        .platform-cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .platform-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 25px;
-            width: 280px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: left;
-        }
-        
-        .platform-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .platform-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .platform-icon.telegram {
-            background-color: #e6f4f9;
-            color: var(--telegram);
-        }
-        
-        .platform-icon.twitter {
-            background-color: #e8f5fd;
-            color: var(--twitter);
-        }
-        
-        .platform-icon.fleek {
-            background-color: #f3f0ff;
-            color: #6f42c1;
-        }
-        
-        .platform-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        .platform-card p {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .platform-button {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        
-        .telegram-button {
-            background-color: var(--telegram);
-            color: white;
-        }
-        
-        .telegram-button:hover {
-            background-color: #0077b3;
-        }
-        
-        .twitter-button {
-            background-color: var(--twitter);
-            color: white;
-        }
-        
-        .twitter-button:hover {
-            background-color: #0d8ecf;
-        }
-        
-        .fleek-button {
-            background-color: #6f42c1;
-            color: white;
-        }
-        
-        .fleek-button:hover {
-            background-color: #5a32a3;
-        }
-        
-        /* Tabs for switching between chatbot and integrations */
-        .tab-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .tab {
-            padding: 10px 20px;
-            background-color: var(--light);
-            border: 1px solid var(--light-gray);
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-        
-        .tab.active {
-            background-color: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        .tab:hover:not(.active) {
-            background-color: var(--light-gray);
-        }
-        
         /* Call to action */
         .cta-section {
             background-color: var(--primary);
@@ -526,10 +387,6 @@
             .chat-container {
                 order: 1;
             }
-            
-            .platform-card {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -538,11 +395,6 @@
         <div class="header">
             <h1>Ikemba AI</h1>
             <p>Your financial knowledge warrior for economic sovereignty</p>
-        </div>
-        
-        <div class="tab-container">
-            <div class="tab active" onclick="showTab('chatbot')">AI Assistant</div>
-            <div class="tab" onclick="showTab('integrations')">Platform Integrations</div>
         </div>
         
         <div id="chatbot-section">
@@ -606,50 +458,10 @@
             </div>
         </div>
         
-        <div id="integrations-section" style="display: none;">
-            <div class="platform-integrations">
-                <h2>Connect with Ikemba Across Platforms</h2>
-                <div class="platform-cards">
-                    <div class="platform-card">
-                        <div class="platform-icon telegram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
-                            </svg>
-                        </div>
-                        <h3>Telegram Bot</h3>
-                        <p>Access Ikemba's financial wisdom directly through our Telegram bot. Get real-time advice, market insights, and practical strategies wherever you are.</p>
-                        <a href="https://t.me/IkembaAI_bot" class="platform-button telegram-button" target="_blank">Connect on Telegram</a>
-                    </div>
-                    
-                    <div class="platform-card">
-                        <div class="platform-icon twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                            </svg>
-                        </div>
-                        <h3>Twitter Feed</h3>
-                        <p>Follow Ikemba on Twitter for daily financial insights, tips on navigating economic uncertainty, and breaking news relevant to emerging markets.</p>
-                        <a href="https://twitter.com/IkembaAI" class="platform-button twitter-button" target="_blank">Follow on Twitter</a>
-                    </div>
-                    
-                    <div class="platform-card">
-                        <div class="platform-icon fleek">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-                            </svg>
-                        </div>
-                        <h3>Fleek AI Integration</h3>
-                        <p>Experience Ikemba's full AI capabilities through our Fleek integration. Access advanced financial modeling, personalized strategies, and AI-powered insights.</p>
-                        <a href="#" class="platform-button fleek-button" onclick="showFleckInfo()">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
         <div class="cta-section">
             <h2>Take Control of Your Financial Future</h2>
             <p>Join thousands of individuals and businesses across the Global South who are using Ikemba's financial knowledge to navigate economic challenges and build lasting prosperity.</p>
-            <a href="#" class="cta-button" onclick="showTab('chatbot')">Start Your Journey Now</a>
+            <a href="#" class="cta-button">Start Your Journey Now</a>
         </div>
         
         <div class="footer">
@@ -679,4 +491,151 @@
                     "Building a business in tough economic conditions requires strategic thinking. First, focus on businesses with low startup costs and fast inventory turnover. Consider a hybrid model selling both locally and online to tap into stronger currencies. Use AI tools to handle multiple roles rather than hiring expensive staff - tools like ChatGPT for content, Canva for design, and Wave for accounting. For funding, look beyond traditional banks to community savings pools, crypto-based microloans, or even crowdfunding through platforms that accept global payments. Above all, structure your pricing to account for currency volatility - perhaps by pricing in dollars but accepting local currency at the day's rate. Remember, your advantage is your adaptability while larger companies move slowly."
                 ],
                 'security': [
-                    "Financial security in unstable environments requires operational discipline. Always use strong passwords with 2FA for any financial accounts. When using crypto, never share your seed phrase - not with anyone, not even with support services. Keep most of your digital assets in cold storage solutions like hardware wallets, with only small amounts in hot wallets for daily use. Use VPNs when accessing financial services online, especially if your government restricts access. For P2P transactions, start with small amounts to test counterparties before larger deals. And perhaps most importantly - maintain a low profile about your wealth or crypto holdings, as this can make you a target. Real security is about habits,
+                    "Financial security in unstable environments requires operational discipline. Always use strong passwords with 2FA for any financial accounts. When using crypto, never share your seed phrase - not with anyone, not even with support services. Keep most of your digital assets in cold storage solutions like hardware wallets, with only small amounts in hot wallets for daily use. Use VPNs when accessing financial services online, especially if your government restricts access. For P2P transactions, start with small amounts to test counterparties before larger deals. And perhaps most importantly - maintain a low profile about your wealth or crypto holdings, as this can make you a target. Real security is about habits, not just tools."
+                ],
+                'banking': [
+                    "Traditional banking is designed to serve the system, not you. In many countries, banks act as extensions of government policy, imposing capital controls when economies falter. That's why you need a diversified approach: keep only necessary operating funds in traditional banks. Explore mobile money services like M-Pesa in Africa which often have fewer restrictions. For remittances and international payments, compare cryptocurrency solutions against traditional services like Western Union - the savings can be substantial. If you must use banks, explore opening accounts in more stable neighboring countries where possible. Remember, the goal isn't to abandon banking entirely, but to reduce your dependency on a single financial system that can freeze your assets overnight."
+                ],
+                'loans': [
+                    "When traditional banks won't lend to you, alternative routes become necessary. Consider forming or joining a community savings group (like susus in West Africa) where members pool funds and take turns receiving loans. Explore P2P lending platforms that connect individual lenders and borrowers. In the crypto space, you can use platforms like Aave where you can deposit collateral and borrow against it without credit checks. For business inventory, supplier credit often works when banks won't - build relationships with suppliers who'll let you pay after you've sold goods. Whatever route you choose, document everything meticulously - building a track record of repayment creates opportunities even in informal systems. The goal is to create your own credit history outside traditional credit bureaus."
+                ],
+                'currency': [
+                    "When your country's currency is collapsing, immediate action is required. First, identify which stronger currencies are most practical in your region - often USD, EUR, or even CNY. Convert earnings to these currencies regularly rather than holding local money. Look for businesses that need to transfer money into your country, offering to exchange your dollars for their local currency needs (often at better rates than official channels). If possible, open a foreign currency account in a neighboring country with a more stable economy. Use stablecoins for digital transactions when physical foreign currency isn't available. Most importantly, adjust your mental accounting - stop thinking in terms of local currency amounts and start calculating value in stable currencies to maintain perspective on your true wealth."
+                ],
+                'sovereignty': [
+                    "Economic sovereignty begins with financial literacy and grows through strategic independence. In practice, this means having multiple income streams, ideally with at least one paying in a hard currency. It means storing wealth in diverse forms - some fiat, some crypto, perhaps some gold or productive assets. It means developing skills marketable to global clients, not just local ones. Build networks outside your immediate economic environment - relationships across borders provide options when local conditions deteriorate. Use technology to access global markets regardless of your location. The true measure of economic sovereignty isn't how much money you have, but how many viable options you maintain regardless of what your government, currency, or local banks do. This is liberation in the modern era."
+                ],
+                'investment': [
+                    "Investing in unstable economies requires different strategies than what works in developed markets. First, understand that preservation of capital often matters more than growth. Consider allocating investments across these categories: 1) Defensive assets like USD stablecoins or physical precious metals that preserve purchasing power; 2) Cashflow businesses with short revenue cycles and low capital requirements; 3) Selected cryptocurrencies as asymmetric bets, understanding they're high-risk; 4) If possible, fractional investments in stronger foreign markets through apps that allow small-minimum investments. Avoid debt-based investments in your local currency, as inflation can erase real returns. Remember that good investments during instability are those that survive volatility first, then grow second. This approach won't make you rich overnight, but it prevents you from becoming poor overnight."
+                ],
+                // Common conversation starters
+                'greeting': [
+                    "Welcome to Ikemba. I'm your financial knowledge warrior. What economic challenge are you facing today?",
+                    "Ikemba is here to serve you. What financial weapons do you need for your economic liberation?",
+                    "Greetings. Ikemba stands ready to help you navigate financial challenges. What do you need assistance with today?"
+                ],
+                'thanks': [
+                    "No need for thanks. This knowledge belongs to all of us - I'm just passing it on. Is there something else you'd like to know?",
+                    "You're welcome. Economic independence is our shared mission. What else can I help you with?",
+                    "This is what Ikemba exists for - to equip you with practical financial knowledge. What's your next question?"
+                ],
+                'default': [
+                    "I don't have specific information on that yet, but Ikemba's mission is to provide unapologetic financial insight. Would you like to know about protecting your savings, using crypto in unstable economies, or building resilient businesses?",
+                    "That's an interesting question. While I continue to learn, Ikemba specializes in helping people navigate currency crises, inflation, and building economic sovereignty. What specific financial challenge are you facing?",
+                    "I'm still expanding my knowledge on that topic. Ikemba focuses primarily on financial strategies for unstable economies. Can I help you with currency protection, DeFi basics, or business resilience instead?"
+                ]
+            };
+
+            // Function to handle sending messages
+            function sendMessage() {
+                const userMessage = userInput.value.trim();
+                if (userMessage === '') return;
+
+                // Add user message to the chat
+                addMessage(userMessage, 'user');
+                userInput.value = '';
+
+                // Generate bot response after a short delay
+                setTimeout(() => {
+                    const botResponse = generateResponse(userMessage);
+                    addMessage(botResponse, 'bot');
+                    
+                    // Scroll to the bottom of the chat
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+
+            // Function to add a message to the chat
+            function addMessage(text, sender) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(sender + '-message');
+                messageElement.textContent = text;
+                chatMessages.appendChild(messageElement);
+                
+                // Scroll to the bottom after adding a message
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Function to generate a response based on the user's message
+            function generateResponse(userMessage) {
+                // Convert to lowercase for easier matching
+                const lowerUserMessage = userMessage.toLowerCase();
+                
+                // Check for greetings
+                if (/^(hi|hello|hey|greetings|what's up)/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.greeting);
+                }
+                
+                // Check for thank you messages
+                if (/thank|thanks|appreciate|grateful/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.thanks);
+                }
+                
+                // Check for specific financial topics
+                if (/inflation|devaluation|currency los|money los|savings los|protect (my |our )?(money|savings|funds)/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.inflation);
+                }
+                
+                if (/crypto|bitcoin|ethereum|stablecoin|digital currency|digital money|blockchain/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.crypto);
+                }
+                
+                if (/defi|decentralized finance|decentral|lending platform|yield farm|liquidity/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.defi);
+                }
+                
+                if (/business|startup|entrepreneur|company|venture|sell|selling|trade|trading/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.business);
+                }
+                
+                if (/security|secure|protect|safety|safe|theft|steal|hack|scam/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.security);
+                }
+                
+                if (/bank|banking|account|deposit|withdraw/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.banking);
+                }
+                
+                if (/loan|borrow|credit|lend|lending/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.loans);
+                }
+                
+                if (/currency|exchange rate|forex|foreign exchange|dollar|euro|naira|peso|convert/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.currency);
+                }
+                
+                if (/sovereign|sovereignty|independence|independent|freedom|free|liberate|liberation/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.sovereignty);
+                }
+                
+                if (/invest|investment|stock|bond|fund|asset|portfolio|diversify/i.test(lowerUserMessage)) {
+                    return getRandomResponse(ikembaKnowledge.investment);
+                }
+                
+                // If no specific topics match, use a default response
+                return getRandomResponse(ikembaKnowledge.default);
+            }
+            
+            // Function to get a random response from a category
+            function getRandomResponse(responses) {
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+
+            // Event listeners
+            sendButton.addEventListener('click', sendMessage);
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Function for topic pills to ask predefined questions
+            window.askQuestion = function(question) {
+                userInput.value = question;
+                sendMessage();
+            };
+        });
+    </script>
+</body>
+</html>
